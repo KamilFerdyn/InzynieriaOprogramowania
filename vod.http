@@ -1,0 +1,52 @@
+GET http://127.0.0.1:8081/webapi/theatres
+###
+
+GET http://127.0.0.1:8081/webapi/theatres?phrase=foo
+custom-header: custom-value
+Cookie: some-cookie=some-value
+
+###
+
+GET http://localhost:8081/webapi/theatres/3
+###
+Accept: application/xml
+
+###
+GET http://127.0.0.1:8081/webapi/arts/1/theatres
+Accept: application/json
+
+###
+POST http://127.0.0.1:8081/theatres
+Content-Type: application/json
+Accept-Language: pl
+
+{
+  "name": "Kinoteka dwa",
+  "logo": "https://kinoteka.pl/img/logo.png"
+}
+
+
+###
+GET http://127.0.0.1:8081/webapi/arts
+
+###
+GET http://127.0.0.1:8081/webapi/arts/1
+
+###
+GET http://127.0.0.1:8081/webapi/theatres/1/arts
+
+###
+POST http://127.0.0.1:8081/webapi/arts
+Content-Type: application/json
+
+{
+  "title": "IO",
+  "poster": "https://kinoteka.pl/img/logo.png",
+  "rating": 4,
+  "directorId": 3
+}
+
+
+###
+POST http://127.0.0.1:8081/actuator/shutdown
+
